@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+   <!-- Desenvolvedor: Luy Mattos-->
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <style>
+      * {
+         margin: 0px;
+         padding: 0px;
+         font-family: Helvetica, sans-serif;}
+      :root {
+         --color-LightBlue: #D3D3D3;
+         --color-Shadow: #262e40;
+         --color-Grey: #808080;
+         --color-Rosa: #9c025c;
+         --color-Azul: #093a4f;
+         --color-Amarelo: #bdb704;}
+
+      .containe {
+         width: 500px;
+         margin: 0px auto;
+         padding: 20px;
+         background-color: var(--color-LightBlue);
+         box-shadow: 5px 5px 50px var(--color-Shadow);}
+      .containe h1 { 
+         text-align: center;
+         margin-top: 20px;
+         margin-bottom: 20px;}
+      .containe hr {
+         width: 500px;
+         margin-left: -3px;
+         background-color: var(--color-Grey);
+         border: 1px solid var(--color-Grey);}
+      .containe h2 {
+         text-align: center;
+         margin-top: 20px;
+         margin-bottom: 20px;}
+      #myList {
+         margin-left: 15px;
+         font-size: 14pt;}
+      .divisoria {
+         padding: 2px;}
+      .divisoria label {
+         font-size: 11pt;}
+      .containe p {
+         margin-top: 20px;
+         margin-bottom: 2px;
+         padding: 5px;
+         font-size: 12pt;}
+      .containe input {
+         margin-left: 5px;
+         padding: 4px;
+         border-radius: 5px;
+         border: 0.5px solid var(--color-Grey)}
+      .containe button {
+         width: 100px;
+         margin-left: 5px;
+         padding: 4px;
+         border-radius: 5px;
+         border: none;
+         background-color: var(--color-Shadow);
+         color: var(--color-LightBlue)}
+
+   </style>
+   <title>Atividade 03</title>
+</head>
+<body>
+   <section class="containe">
+      <h1>Estudando o método appendChild()</h1>
+      <hr/>
+      <h2>Lista de Compras</h2>
+
+      <ul id="myList">
+         <li>Café</li>
+         <li>Chá</li>
+      </ul>
+
+      <p>Adicione um novo item a lista:</p>
+
+      <input type="text" name="item" id="info-add" placeholder="Digite o Próximo item">
+      <button id="btn-add">Adicionar Item</button>
+      
+   </section>
+      
+   <!--------- Início JavaScript --------->
+   <script>
+      var $ul = document.querySelector('ul');
+      var $item = document.querySelector('#info-add');
+      var $btn = document.querySelector('#btn-add');
+
+      $btn.addEventListener('click', addItens);
+
+      function addItens() {
+         var itens = $item.value;
+         console.log(itens)
+
+         const node = document.createElement("li");
+         const textnode = document.createTextNode(itens);
+         node.appendChild(textnode);
+         document.getElementById("myList").appendChild(node);
+      };
+      document.querySelector('input[name="q1"]:checked').value;
+
+      
+      
+   </script>
+   <!--------- FIM JavaScript --------->
+
+</body>
+</html>
